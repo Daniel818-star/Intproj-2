@@ -2234,6 +2234,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.key === "Enter") sendMessage();
     });
 });
+
+
+    fetch('auth.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('auth-container').innerHTML = data);
+
 </script>
 <!-- CHATBOT -->
 <div class="chatbot-container" id="chatbot">

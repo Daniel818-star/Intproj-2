@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WaslaTech - Login / Signup</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+/* IMPORT SAME VARIABLES + FORM STYLE ONLY */
+
+:root {
+    --primary: #1a3a52;
+    --primary-dark: #0a2a42;
+    --accent: #70c8ff;
+    --gray-200: #e5e7eb;
+    --gray-600: #4b5563;
+    --light: #f9fafb;
+    --radius-lg: 1rem;
+}
+
+/* BODY */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1a3a52, #2a4a62);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* CONTAINER */
+.auth-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    background: white;
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    width: 800px;
+}
+
+/* CARD */
+.auth-card {
+    padding: 20px;
+}
+
+.auth-card h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+/* INPUT */
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+}
+
+/* BUTTON */
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary);
+    color: white;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+}
+
+/* LINK */
+.auth-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.auth-link a {
+    color: var(--primary);
+    cursor: pointer;
+}
+
+/* HIDE */
+.hidden {
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="auth-container">
+
+    <!-- LOGIN -->
+    <div class="auth-card" id="loginCard">
+        <h3>Login</h3>
+
+        <form onsubmit="login(event)">
+            <input type="email" placeholder="Email" class="form-input" required>
+            <input type="password" placeholder="Password" class="form-input" required>
+
+            <button class="btn">Login</button>
+        </form>
+
+        <p class="auth-link">
+            Don't have an account? 
+            <a onclick="switchTab('signup')">Sign up</a>
+        </p>
+    </div>
+
+    <!-- SIGNUP -->
+    <div class="auth-card hidden" id="signupCard">
+        <h3>Sign Up</h3>
+
+        <form onsubmit="signup(event)">
+            <input type="text" placeholder="Full Name" class="form-input" required>
+            <input type="email" placeholder="Email" class="form-input" required>
+            <input type="password" placeholder="Password" class="form-input" required>
+            <input type="password" placeholder="Confirm Password" class="form-input" required>
+
+            <button class="btn">Create Account</button>
+        </form>
+
+        <p class="auth-link">
+            Already have an account? 
+            <a onclick="switchTab('login')">Login</a>
+        </p>
+    </div>
+
+</div>
+
+<script>
+function switchTab(tab) {
+    document.getElementById("loginCard").classList.toggle("hidden", tab === "signup");
+    document.getElementById("signupCard").classList.toggle("hidden", tab === "login");
+}
+
+function login(e) {
+    e.preventDefault();
+    alert("Login successful!");
+    window.location.href = "index.html"; // back to main page
+}
+
+function signup(e) {
+    e.preventDefault();
+    alert("Account created!");
+    switchTab('login');
+}
+</script>
+
+</body>
+</html>

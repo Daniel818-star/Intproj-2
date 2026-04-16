@@ -8,7 +8,7 @@
     <meta name="author" content="WaslaTech">
     <title>WaslaTech - Enterprise Telecom Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="auth.html">
+    <a href="auth.html" class="btn btn-primary">Login/Sign Up</a>
     <style>
         /* ============================================
    WASLATECH - PROFESSIONAL CSS STYLESHEET
